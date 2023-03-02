@@ -2,7 +2,7 @@ const { DATABASE_SCHEMA } = require('../config');
 const axios = require('axios');
 const { dbConnector } = require('../db');
 
-async function fetchData(db) {
+async function fetchDataToDB(db) {
   try {
     const result = await axios.get("https://datausa.io/api/data?drilldowns=Nation&measures=Population");
     const { data } = result;
@@ -21,4 +21,4 @@ async function fetchData(db) {
   }
 }
 
-module.exports = { fetchData };
+module.exports = { fetchDataToDB };

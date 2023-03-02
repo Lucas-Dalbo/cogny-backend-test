@@ -1,12 +1,14 @@
 const { DATABASE_SCHEMA } = require('../config');
-const { dbConnector } = require('../db');
 
-async function findAllActive() {
-  const db = await dbConnector();
+async function findAllActive(db) {
   const result = await db[DATABASE_SCHEMA].api_data.find({
-    is_active: true
+    is_active: true,
+    and: [{
+      "api_name": "teste-cogny",
+    }]
   });
-  console.log(result);
+
+  return result;
 }
 
 module.exports = { findAllActive };

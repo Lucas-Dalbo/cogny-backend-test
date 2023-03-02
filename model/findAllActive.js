@@ -1,7 +1,7 @@
 const { DATABASE_SCHEMA } = require('../config');
 
 async function findAllActive(db) {
-  const result = await db[DATABASE_SCHEMA].api_data.find({
+  const result = await db[DATABASE_SCHEMA].api_data.findOne({
     is_active: true,
     and: [{
       "api_name": "teste-cogny",

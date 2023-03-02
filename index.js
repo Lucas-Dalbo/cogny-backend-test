@@ -15,8 +15,8 @@ async function main() {
 
     const response = await readLineAsync(
         "\nO que deseja fazer?\n" +
-        "   1. Consultar a API e salvar os dados no banco de dados.\n" +
-        "   2. Listar informações do banco de dados.\n" +
+        "   1. Consultar a API e salvar oas informações no banco de dados.\n" +
+        "   2. Exibir as informações no banco de dados.\n" +
         "   3. Calcular a soma das populações de 2018, 2019 e 2020\n" +
         "   0. Sair;\n"
     );

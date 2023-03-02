@@ -1,7 +1,7 @@
 const { dbConnector } = require('./db');
 const { readLineAsync, readline } = require('./interface');
 const { fetchDataToDB } = require('./model/fetchDataToDB');
-const { findAllActive } = require('./model/findAllActive');
+const { findTesteCogny } = require('./model/findTesteCogny');
 const { sumPopulationNode } = require('./model/sumPopulationNode');
 
 
@@ -9,7 +9,7 @@ async function main() {
     const db = await dbConnector();
     const actions = {
         "1": fetchDataToDB,
-        "2": findAllActive,
+        "2": findTesteCogny,
         "3": sumPopulationNode,
     };
 

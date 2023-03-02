@@ -1,6 +1,6 @@
 const { DATABASE_SCHEMA } = require('../config');
 
-async function findAllActive(db) {
+async function findTesteCogny(db) {
   const result = await db[DATABASE_SCHEMA].api_data.findOne({
     is_active: true,
     and: [{
@@ -11,4 +11,4 @@ async function findAllActive(db) {
   return result;
 }
 
-module.exports = { findAllActive };
+module.exports = { findTesteCogny };

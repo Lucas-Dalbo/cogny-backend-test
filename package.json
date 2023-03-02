@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node .",
+    "db-build": "node ./builder/index.js",
+    "db-clean": "node ./model/destroyAll.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Fernando Grassi Chaves",

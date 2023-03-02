@@ -9,4 +9,4 @@ async function findAllActive() {
   console.log(result);
 }
 
-findAllActive();
+module.exports = { findAllActive };

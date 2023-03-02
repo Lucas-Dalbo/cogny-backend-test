@@ -1,7 +1,7 @@
 const { DATABASE_SCHEMA } = require('../config');
 const { dbConnector } = require('../db');
 
-// Call start
+
 (async () => {
     console.log('main.js: before start');
 
@@ -24,12 +24,9 @@ const { dbConnector } = require('../db');
         });
     };
 
-    //public
     const migrationUp = async () => {
         return new Promise(async resolve => {
             await execFileSql(DATABASE_SCHEMA, 'schema');
-
-            //cria as estruturas necessarias no db (schema)
             await execFileSql(DATABASE_SCHEMA, 'table');
             await execFileSql(DATABASE_SCHEMA, 'view');
 
@@ -42,28 +39,10 @@ const { dbConnector } = require('../db');
 
     try {
         await migrationUp();
-
-        //exemplo de insert
-        // const result1 = await db[DATABASE_SCHEMA].api_data.insert({
-        //     doc_record: { 'a': 'b' },
-        // })
-        // console.log('result1 >>>', result1);
-
-        //exemplo select
-        // const result2 = await db[DATABASE_SCHEMA].api_data.find({
-        //     is_active: true
-        // });
-        // console.log('result2 >>>', result2);
-
-        // exemplo de exclusão
-        // const result3 = await db[DATABASE_SCHEMA].api_data.destroy(result1.id)
-        // console.log('result3 >>>', result3);
-
     } catch (e) {
         console.log(e.message)
     } finally {
         console.log('finally');
-
     }
     console.log('main.js: after start');
 })();

@@ -1,5 +1,6 @@
 const { findTesteCogny  } = require('./findTesteCogny');
 
+
 async function sumPopulationNode(db) {
   console.log("Calculando a soma das Populações de 2018, 2019 e 2020...");
   try {

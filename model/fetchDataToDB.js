@@ -1,6 +1,7 @@
 const { DATABASE_SCHEMA } = require('../config');
 const axios = require('axios');
 
+
 async function fetchDataToDB(db) {
   try {
     const result = await axios.get("https://datausa.io/api/data?drilldowns=Nation&measures=Population");

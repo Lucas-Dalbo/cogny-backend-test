@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node .",
+    "pre-start": "npm run db-build && npm run db-clean",
     "db-build": "node ./builder/index.js",
     "db-clean": "node ./model/destroyAll.js",
     "test": "echo \"Error: no test specified\" && exit 1"
